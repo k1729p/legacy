@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<facelet-taglib version="2.2"
+    xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facelettaglibrary_2_2.xsd">
+  <namespace>http://www.example.org/jsf</namespace>
+    <tag>
+      <tag-name>field</tag-name>
+      <source>field.xhtml</source>
+    </tag>
+    <tag>
+      <tag-name>fieldReadOnly</tag-name>
+      <source>fieldReadOnly.xhtml</source>
+    </tag>
+    <tag>
+      <tag-name>column</tag-name>
+      <source>column.xhtml</source>
+    </tag>
+    <tag>
+      <tag-name>columnCommand</tag-name>
+      <source>columnCommand.xhtml</source>
+    </tag>
+    <tag>
+      <tag-name>buttonsOkCancel</tag-name>
+      <source>buttonsOkCancel.xhtml</source>
+    </tag>
+</facelet-taglib>

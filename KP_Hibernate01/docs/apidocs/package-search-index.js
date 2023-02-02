@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"kp.company"},{"l":"kp.company.domain"},{"l":"kp.company.exc"},{"l":"kp.company.gui"},{"l":"kp.company.util"}]

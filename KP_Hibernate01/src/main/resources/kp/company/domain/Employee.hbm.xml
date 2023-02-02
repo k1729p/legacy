@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="kp.company.domain">
+	<class name="Employee" table="EMPLOYEES">
+		<id name="id" column="id">
+			<generator class="native"/>
+		</id>
+		<property name="firstName" column="first_name"/>
+		<property name="lastName" column="last_name"/>
+		<many-to-one name="department" column="department_id" class="Department" not-null="true"/>
+		<many-to-one name="title" column="title_id" class="Title" not-null="true"/>
+	</class>
+</hibernate-mapping>

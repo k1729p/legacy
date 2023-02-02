@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:kp="http://www.example.org/jsf"
+                template="/WEB-INF/templates/template.xhtml">
+
+  <ui:define name="menu">
+    <ui:include src="/pages/siteNavigation.xhtml">
+      <ui:param name="page" value="5"/>
+    </ui:include>
+  </ui:define>
+
+  <ui:define name="content">
+    <div class="form" >
+      <h:panelGrid columns="2"
+                   columnClasses="form-prompt,form-field"
+                   rules="rows">
+
+        <kp:fieldReadOnly label="Department" fieldName="name"
+                          entity="#{companyBackingBean.department}"/>
+      </h:panelGrid>
+    </div>
+      
+    <h:dataTable border="1"
+                 cellpadding="5px"
+                 columnClasses="list-col,list-col,list-col,list-link-2,list-link-3"
+                 frame="box"
+                 headerClass="list-header"
+                 rowClasses="list-row"
+                 rules="all"
+                 styleClass="list-all"
+                 summary="departments"
+                 value="#{companyBackingBean.employees}"
+                 var="employee">
+
+      <kp:column label="First Name" fieldName="firstName" entity="#{employee}"/>
+
+      <kp:column label="Last Name" fieldName="lastName" entity="#{employee}"/>
+
+      <kp:column label="Title" fieldName="name" entity="#{employee.title}"/>
+                   
+      <kp:columnCommand label="Edit" action="editEmployee"
+                        target="employee" source="#{employee}"
+                        backingBean="#{companyBackingBean}"/>
+                       
+      <kp:columnCommand label="Delete" action="confirmDeleteEmployee"
+                        target="employee" source="#{employee}"
+                        backingBean="#{companyBackingBean}"/>
+    </h:dataTable>
+
+    <div class="links" ></div>
+      
+    <div class="links" >
+      <p><h:commandLink action="#{companyBackingBean.prepareAddEmployee}">
+        <h:outputText value="Add Employee" />
+      </h:commandLink></p>
+    </div>
+  </ui:define>
+</ui:composition>

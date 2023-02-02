@@ -1,0 +1,11 @@
+USE kp_ejb01;
+
+CREATE TABLE hibernate_sequence (
+	next_val bigint(20) DEFAULT NULL
+) ENGINE=InnoDB;
+
+insert into hibernate_sequence (next_val) values (10);
+
+SELECT TABLE_NAME, COLUMN_NAME, DATA_TYPE, IS_NULLABLE, COLUMN_TYPE, COLUMN_KEY, EXTRA
+FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = 'kp_ejb01'
+ORDER BY TABLE_NAME, COLUMN_NAME;

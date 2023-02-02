@@ -1,0 +1,13 @@
+.settings/
+ear/.settings
+ear/target
+ear/.project
+ejb/.settings
+ejb/target
+ejb/.project
+target-eclipse/
+war/.settings
+war/target
+war/.project
+.classpath
+.project

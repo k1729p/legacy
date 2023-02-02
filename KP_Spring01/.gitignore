@@ -1,0 +1,6 @@
+.settings/
+0_batch/*.lnk
+logs/
+target/
+.classpath
+.project

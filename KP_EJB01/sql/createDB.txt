@@ -1,0 +1,3 @@
+CREATE DATABASE kp_ejb01;
+
+GRANT ALL PRIVILEGES ON kp_ejb01.* TO kp@localhost IDENTIFIED BY 'mikimiki';

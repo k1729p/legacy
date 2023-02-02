@@ -1,0 +1,7 @@
+.settings/
+0_batch/*.lnk
+logs/
+target/
+target-eclipse/
+.classpath
+.project

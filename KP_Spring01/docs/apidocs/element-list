@@ -1,0 +1,9 @@
+kp.company
+kp.company.config
+kp.company.hibernate
+kp.company.jdbc
+kp.company.jpa
+kp.company.service
+kp.company.util
+kp.company.validation
+kp.company.web

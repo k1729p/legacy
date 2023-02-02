@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"kp.company"},{"l":"kp.company.config"},{"l":"kp.company.hibernate"},{"l":"kp.company.jdbc"},{"l":"kp.company.jpa"},{"l":"kp.company.service"},{"l":"kp.company.util"},{"l":"kp.company.validation"},{"l":"kp.company.web"}]

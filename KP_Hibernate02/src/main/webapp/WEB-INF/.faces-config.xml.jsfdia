@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:" SHAPE="32,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules::0" NAME="item" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="homeCompany::#pages#company#home.xhtml"
+    NAME="output" PATH="/pages/company/home.xhtml"
+    TARGET="rules:#pages#company#home.xhtml" TITLE="homeCompany" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="listDepartments::#pages#departments#list.xhtml" NAME="output1"
+    PATH="/pages/departments/list.xhtml"
+    TARGET="rules:#pages#departments#list.xhtml" TITLE="listDepartments" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="editDepartment::#pages#departments#edit.xhtml" NAME="output2"
+    PATH="/pages/departments/edit.xhtml"
+    TARGET="rules:#pages#departments#edit.xhtml" TITLE="editDepartment" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="confirmDeleteDepartment::#pages#departments#confirmDelete.xhtml"
+    NAME="output3" PATH="/pages/departments/confirmDelete.xhtml"
+    TARGET="rules:#pages#departments#confirmDelete.xhtml"
+    TITLE="confirmDeleteDepartment" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="listEmployees::#pages#employees#list.xhtml"
+    NAME="output4" PATH="/pages/employees/list.xhtml"
+    TARGET="rules:#pages#employees#list.xhtml" TITLE="listEmployees" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="editEmployee::#pages#employees#edit.xhtml"
+    NAME="output5" PATH="/pages/employees/edit.xhtml"
+    TARGET="rules:#pages#employees#edit.xhtml" TITLE="editEmployee" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="confirmDeleteEmployee::#pages#employees#confirmDelete.xhtml"
+    NAME="output6" PATH="/pages/employees/confirmDelete.xhtml"
+    TARGET="rules:#pages#employees#confirmDelete.xhtml"
+    TITLE="confirmDeleteEmployee" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#employees#confirmDelete.xhtml"
+  PATH="/pages/employees/confirmDelete.xhtml" SHAPE="304,897,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#pages#employees#list.xhtml"
+  PATH="/pages/employees/list.xhtml" SHAPE="304,673,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#pages#employees#edit.xhtml"
+  PATH="/pages/employees/edit.xhtml" SHAPE="304,785,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#pages#departments#list.xhtml"
+  PATH="/pages/departments/list.xhtml" SHAPE="304,337,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#pages#departments#confirmDelete.xhtml"
+  PATH="/pages/departments/confirmDelete.xhtml" SHAPE="304,561,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#pages#departments#edit.xhtml"
+  PATH="/pages/departments/edit.xhtml" SHAPE="304,449,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#pages#company#home.xhtml"
+  PATH="/pages/company/home.xhtml" SHAPE="304,33,0,0" model-entity="JSFProcessGroup"/>
+</PROCESS>

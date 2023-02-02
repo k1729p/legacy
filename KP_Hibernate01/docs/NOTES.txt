@@ -1,0 +1,49 @@
+BaseEntity
+  |
+  |--- Person
+  |      \--- Employee
+  |
+  \--- NamedEntity
+         |--- Department
+         \--- Title
+
+
+---------------------------------------
+ Department             | Employee    |
+ one-to-many            | many-to-one |
+ mapped-by="department" |             |
+ INVERSE SIDE           | OWNING SIDE |
+-----------------------------------------
+A bidirectional relationship has both an owning side and an inverse side.
+
+---------------------------------------
+ Employee               | Title       |
+ many-to-one            |             |
+ OWNING SIDE            |             |
+-----------------------------------------
+A unidirectional relationship has only an owning side.
+
+=======================================================================================================
+Example from Hibernate Tutorial:
+ _______________        ______________        ____________
+| EVENTS        |      | PERSON_EVENT |      |  PERSON    |
+|_______________|      |______________|      |____________|
+| *EVENT_ID     | <--> | *EVENT_ID    |      | *PERSON_ID |
+|  EVENT_DATE   |      | *PERSON_ID   | <--> |  AGE       |
+|  TITLE        |      |______________|      |  FIRSTNAME |
+|_______________|                            |  LASTNAME  |
+                                             |____________|
+
+              |---------------|---------------|
+              | Event         | Person        |
+              |---------------|---------------|
+ set          | participants  | events        |
+              |               |               |
+ key          | EVENT_ID      | PERSON_ID     |
+ many-to-many | PERSON_ID     | EVENT_ID      |
+              |               |               |
+              | INVERSE SIDE  | OWNING SIDE   |
+              |---------------|---------------|
+A bidirectional relationship has both an owning side and an inverse side.
+=======================================================================================================
+

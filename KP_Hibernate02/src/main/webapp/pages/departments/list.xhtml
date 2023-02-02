@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:kp="http://www.example.org/jsf"
+                template="/WEB-INF/templates/template.xhtml">
+
+  <ui:define name="menu">
+    <ui:include src="/pages/siteNavigation.xhtml">
+      <ui:param name="page" value="2"/>
+    </ui:include>
+  </ui:define>
+
+  <ui:define name="content">
+    <h:dataTable border="1"
+                 cellpadding="5px"
+                 columnClasses="list-col,list-link-1,list-link-2,list-link-3"
+                 frame="box"
+                 headerClass="list-header"
+                 rowClasses="list-row"
+                 rules="all"
+                 styleClass="list-all"
+                 summary="departments"
+                 value="#{companyBackingBean.departments}"
+                 var="department">
+
+      <kp:column label="Name" fieldName="name" entity="#{department}"/>
+                   
+      <kp:columnCommand label="Employees" action="listEmployees"
+                        target="department" source="#{department}"
+                        backingBean="#{companyBackingBean}"/>
+                       
+      <kp:columnCommand label="Edit" action="editDepartment"
+                        target="department" source="#{department}"
+                        backingBean="#{companyBackingBean}"/>
+                       
+      <kp:columnCommand label="Delete" action="confirmDeleteDepartment"
+                        target="department" source="#{department}"
+                        backingBean="#{companyBackingBean}"/>
+    </h:dataTable>
+
+    <div class="links" ></div>
+      
+    <div class="links" >
+      <p><h:commandLink action="#{companyBackingBean.prepareAddDepartment}">
+        <h:outputText value="Add Department"/>
+      </h:commandLink></p>
+    </div>
+  </ui:define>
+</ui:composition>

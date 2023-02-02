@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>kp.company</groupId>
+	<artifactId>KP_EJB01</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>${project.artifactId}</name>
+
+	<modules>
+		<module>ejb</module>
+		<module>war</module>
+		<module>ear</module>
+	</modules>
+
+	<properties>
+		<maven.compiler.source>12</maven.compiler.source>
+		<maven.compiler.target>12</maven.compiler.target>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<maven.javadoc.plugin.version>3.1.0</maven.javadoc.plugin.version>
+		<maven.ejb.plugin.version>3.0.1</maven.ejb.plugin.version>
+		<maven.war.plugin.version>3.2.3</maven.war.plugin.version>
+		<maven.ear.plugin.version>3.0.1</maven.ear.plugin.version>
+		
+		<jboss.javaee.version>1.1.1.Final</jboss.javaee.version>
+		<struts2.bom.version>2.5.20</struts2.bom.version>
+		<log4j2.bom.version>2.11.2</log4j2.bom.version>
+		<javax.persistence.version>2.2</javax.persistence.version>
+		<javax.servlet.version>4.0.0</javax.servlet.version>
+		<wildfly.maven.plugin.version>2.0.1.Final</wildfly.maven.plugin.version>
+		
+		<jboss.hostname>127.0.0.1</jboss.hostname>
+		<jboss.username>admin</jboss.username>
+		<jboss.password>mikimiki</jboss.password>
+		<jboss.port>9990</jboss.port>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.jboss.spec</groupId>
+				<artifactId>jboss-javaee-7.0</artifactId>
+				<version>${jboss.javaee.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>		
+			<dependency>
+				<groupId>org.apache.struts</groupId>
+				<artifactId>struts2-bom</artifactId>
+				<version>${struts2.bom.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-bom</artifactId>
+				<version>${log4j2.bom.version}</version>
+				<scope>import</scope>
+				<type>pom</type>
+			</dependency>		
+		</dependencies>
+	</dependencyManagement>
+	
+	<build>
+		<finalName>kp_ejb01</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.wildfly.plugins</groupId>
+				<artifactId>wildfly-maven-plugin</artifactId>
+				<version>${wildfly.maven.plugin.version}</version>
+				<!-- Plugin configured to skip deployment for all modules. -->
+				<!-- Then enabled only in the ear module. -->
+                <configuration>
+                    <skip>true</skip>
+					<hostname>${jboss.hostname}</hostname>
+					<username>${jboss.username}</username>
+					<password>${jboss.password}</password>
+					<port>${jboss.port}</port>
+                </configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>${maven.javadoc.plugin.version}</version>
+				<configuration>
+					<reportOutputDirectory>${basedir}/docs</reportOutputDirectory>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

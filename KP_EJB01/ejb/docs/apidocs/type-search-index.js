@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"kp.company.request","l":"BusinessLogic"},{"p":"kp.company.request","l":"BusinessLogicBean"},{"p":"kp.company.entity","l":"Department"},{"p":"kp.company.entity","l":"Employee"},{"p":"kp.company.entity","l":"Title"}]
